@@ -1,0 +1,21 @@
+{
+  "name": "@btakita/domain--server",
+  "type": "module",
+  "version": "0.0.0",
+  "types": "index.ts",
+  "exports": {
+    ".": "./index.ts",
+    "./response": "./response/index.ts",
+    "./package.json": "./package.json"
+  },
+  "dependencies": {
+    "ctx-core": "^5.38.0",
+    "rmemo": "^0.42.0"
+  },
+  "devDependencies": {
+    "bun-types": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.3.3"
+  }
+}
