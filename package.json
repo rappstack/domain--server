@@ -1,8 +1,27 @@
 {
-  "name": "@btakita/domain--server",
+  "name": "@rappstack/domain--server",
   "type": "module",
   "version": "0.0.0",
   "types": "index.ts",
+  "description": "domain library targeting the server",
+  "keywords": [
+    "rappstack",
+    "reactive",
+    "full-stack",
+    "domain",
+    "server",
+    "blog"
+  ],
+  "homepage": "https://github.com/rappstack/domain--server",
+  "bugs": {
+    "url": "https://github.com/rappstack/domain--server/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rappstack/domain--server.git"
+  },
+  "license": "Apache-2.0",
+  "author": "Brian Takita",
   "exports": {
     ".": "./index.ts",
     "./response": "./response/index.ts",
