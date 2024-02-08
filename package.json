@@ -2,7 +2,6 @@
 	"name": "@rappstack/domain--server",
 	"type": "module",
 	"version": "0.0.0",
-	"types": "index.ts",
 	"description": "domain library targeting the server",
 	"keywords": [
 		"rappstack",
@@ -22,11 +21,21 @@
 	},
 	"license": "Apache-2.0",
 	"author": "Brian Takita",
+	"types": "index.ts",
 	"exports": {
 		".": "./index.ts",
-		"./response": "./response/index.ts",
 		"./package.json": "./package.json"
 	},
+	"files": [
+		"*.d.ts",
+		"*.js",
+		"*.json",
+		"brookers",
+		"css",
+		"icon",
+		"neon",
+		"spinner"
+	],
 	"dependencies": {
 		"ctx-core": "^5.38.1",
 		"rmemo": "^0.42.1"
