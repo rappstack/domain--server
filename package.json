@@ -2,6 +2,8 @@
 	"name": "@rappstack/domain--server",
 	"type": "module",
 	"version": "0.0.0",
+	"license": "Apache-2.0",
+	"author": "Brian Takita",
 	"description": "domain library targeting the server",
 	"keywords": [
 		"rappstack",
@@ -19,8 +21,6 @@
 		"type": "git",
 		"url": "git+https://github.com/rappstack/domain--server.git"
 	},
-	"license": "Apache-2.0",
-	"author": "Brian Takita",
 	"types": "index.ts",
 	"exports": {
 		".": "./index.ts",
