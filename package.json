@@ -30,14 +30,14 @@
 		"*.d.ts",
 		"*.js",
 		"*.json",
-		"brookers",
-		"css",
-		"icon",
-		"neon",
-		"spinner"
+		"drizzzle",
+		"response",
+		"sqlite"
 	],
 	"dependencies": {
 		"ctx-core": "^6.1.0",
+		"drizzle-kit": "^0.20.14",
+		"drizzle-orm": "^0.29.3",
 		"rmemo": "^0.44.0"
 	},
 	"devDependencies": {
