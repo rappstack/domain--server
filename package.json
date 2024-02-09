@@ -24,6 +24,9 @@
 	"types": "index.ts",
 	"exports": {
 		".": "./index.ts",
+		"./drizzle": "./drizzle/index.ts",
+		"./response": "./response/index.ts",
+		"./sqlite": "./sqlite/index.ts",
 		"./package.json": "./package.json"
 	},
 	"files": [
