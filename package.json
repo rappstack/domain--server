@@ -38,10 +38,10 @@
 		"sqlite"
 	],
 	"dependencies": {
-		"ctx-core": "^6.1.1",
+		"ctx-core": "^6.1.2",
 		"drizzle-kit": "^0.20.14",
 		"drizzle-orm": "^0.29.3",
-		"rmemo": "^0.44.1"
+		"rmemo": "^0.44.2"
 	},
 	"devDependencies": {
 		"bun-types": "latest"
