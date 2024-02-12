@@ -26,6 +26,8 @@
 		".": "./index.ts",
 		"./drizzle": "./drizzle/index.ts",
 		"./response": "./response/index.ts",
+		"./schema": "./schema/index.ts",
+		"./schema/text_cache": "./schema/text_cache/index.ts",
 		"./sqlite": "./sqlite/index.ts",
 		"./package.json": "./package.json"
 	},
@@ -35,6 +37,7 @@
 		"*.json",
 		"drizzzle",
 		"response",
+		"schema",
 		"sqlite"
 	],
 	"dependencies": {
