@@ -29,6 +29,7 @@
 		"./schema": "./schema/index.ts",
 		"./schema/text_cache": "./schema/text_cache/index.ts",
 		"./sqlite": "./sqlite/index.ts",
+		"./text_cache": "./text_cache/index.ts",
 		"./package.json": "./package.json"
 	},
 	"files": [
@@ -38,7 +39,8 @@
 		"drizzzle",
 		"response",
 		"schema",
-		"sqlite"
+		"sqlite",
+		"text_cache"
 	],
 	"dependencies": {
 		"ctx-core": "^6.3.0",
