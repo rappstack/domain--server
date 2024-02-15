@@ -1,30 +1,41 @@
 import { eq, sql } from 'drizzle-orm'
 import { type wide_app_ctx_T } from 'relysjs/server'
 import { drizzle_db_ } from '../drizzle/index.js'
-import { text_cache } from '../schema/index.js'
-export async function text_cache__upsert(ctx:wide_app_ctx_T, text_cache_id:string, data:string) {
+import { text_cache_tbl } from '../schema/index.js'
+export async function text_cache__upsert(
+	ctx:wide_app_ctx_T,
+	text_cache_id:string,
+	partial:{
+		data:string
+		etag?:string
+	}
+) {
 	const db = drizzle_db_(ctx)
-	const data_o = db.select({ data: text_cache.data })
-		.from(text_cache)
-		.where(eq(text_cache.text_cache_id, text_cache_id))
+	const data_o = db.select({
+		etag: text_cache_tbl.etag,
+		data: text_cache_tbl.data
+	})
+		.from(text_cache_tbl)
+		.where(eq(text_cache_tbl.text_cache_id, text_cache_id))
 		.limit(1)
 		.all()[0]
-	return db.insert(text_cache)
+	return db.insert(text_cache_tbl)
 		.values({
 			text_cache_id,
-			data
+			...partial,
 		})
 		.onConflictDoUpdate({
-			target: text_cache.text_cache_id,
+			target: text_cache_tbl.text_cache_id,
 			set: {
 				...(
-					data !== data_o?.data
-						? {
-							create_ms: sql`CURRENT_TIMESTAMP`,
-							data
-						}
-						: null),
-				validate_ms: sql`CURRENT_TIMESTAMP`,
+					(partial.etag && partial.etag === data_o?.etag)
+					|| partial.data === data_o?.data
+						? null
+						: {
+							create_dts: sql`CURRENT_TIMESTAMP`,
+							...partial,
+						}),
+				validate_dts: sql`CURRENT_TIMESTAMP`,
 			}
 		})
 		.returning()

@@ -1,3 +1,5 @@
+export * from './active_text_cache.js'
 export * from './text_cache__select.js'
 export * from './text_cache__upsert.js'
+export * from './text_cache__get.js'
 export * from './text_cache_meta__select.js'
