@@ -14,3 +14,4 @@ export function text_cache_meta__select(ctx:wide_app_ctx_T, text_cache_id:string
 		.limit(1)
 		.all()[0]
 }
+export type text_cache_meta_T = ReturnType<typeof text_cache_meta__select>
