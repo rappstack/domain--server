@@ -2,7 +2,7 @@ import { eq, sql } from 'drizzle-orm'
 import { type wide_app_ctx_T } from 'relysjs/server'
 import { drizzle_db_ } from '../drizzle/index.js'
 import { text_cache_tbl } from '../schema/index.js'
-export async function text_cache__upsert(
+export function text_cache__upsert(
 	ctx:wide_app_ctx_T,
 	text_cache_id:string,
 	partial:{
