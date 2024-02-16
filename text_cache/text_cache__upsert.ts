@@ -39,5 +39,5 @@ export async function text_cache__upsert(
 			}
 		})
 		.returning()
-		.get()
+		.all()[0]
 }
