@@ -35,6 +35,7 @@ export function text_cache__upsert(
 							create_dts: sql`CURRENT_TIMESTAMP`,
 							...partial,
 						}),
+				etag: partial.etag,
 				validate_dts: sql`CURRENT_TIMESTAMP`,
 			}
 		})

@@ -9,3 +9,4 @@ export function text_cache__select(ctx:wide_app_ctx_T, text_cache_id:string) {
 		.limit(1)
 		.all()[0]
 }
+export type text_cache_T = ReturnType<typeof text_cache__select>
