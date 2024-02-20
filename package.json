@@ -28,6 +28,7 @@
 		"./response": "./response/index.ts",
 		"./schema": "./schema/index.ts",
 		"./schema/text_cache": "./schema/text_cache/index.ts",
+		"./site": "./site/index.ts",
 		"./sqlite": "./sqlite/index.ts",
 		"./text_cache": "./text_cache/index.ts",
 		"./package.json": "./package.json"
@@ -39,6 +40,7 @@
 		"drizzzle",
 		"response",
 		"schema",
+		"site",
 		"sqlite",
 		"text_cache"
 	],
