@@ -1,7 +1,7 @@
 import { Database } from 'bun:sqlite'
 import { ns_id_be_memo_pair_, ns_id_be_sig_triple_, nullish__none_ } from 'ctx-core/rmemo'
 export const [
-	sqlite_db__name$_,
+	,
 	sqlite_db__name_,
 	sqlite_db__name__set,
 ] = ns_id_be_sig_triple_<string|undefined, 'app'>(
@@ -9,7 +9,7 @@ export const [
 	'sqlite_db__name',
 	()=>undefined)
 export const [
-	sqlite_db$_,
+	,
 	sqlite_db_,
 ] = ns_id_be_memo_pair_(
 	'app',
