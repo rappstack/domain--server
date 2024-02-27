@@ -57,7 +57,7 @@
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"relementjs": "^0.73.7"
+		"relementjs": "^0.74.0"
 	},
 	"peerDependencies": {
 		"typescript": "^5.3.3"
