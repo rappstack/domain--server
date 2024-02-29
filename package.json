@@ -50,14 +50,14 @@
 		"text_cache"
 	],
 	"dependencies": {
-		"ctx-core": "^6.5.0",
+		"ctx-core": "^6.5.1",
 		"drizzle-kit": "^0.20.14",
 		"drizzle-orm": "^0.29.4",
-		"rmemo": "^0.46.7"
+		"rmemo": "^0.46.8"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"relementjs": "^0.74.0"
+		"relementjs": "^0.74.1"
 	},
 	"peerDependencies": {
 		"typescript": "^5.3.3"
