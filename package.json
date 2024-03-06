@@ -50,17 +50,17 @@
 		"text_cache"
 	],
 	"dependencies": {
-		"ctx-core": "^6.5.3",
+		"ctx-core": "^6.5.4",
 		"drizzle-kit": "^0.20.14",
-		"drizzle-orm": "^0.29.4",
-		"rebuildjs": "^0.65.0",
-		"rmemo": "^0.46.10"
+		"drizzle-orm": "^0.29.5",
+		"rebuildjs": "^0.65.1",
+		"rmemo": "^0.46.11"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"relementjs": "^0.74.3"
+		"relementjs": "^0.74.4"
 	},
 	"peerDependencies": {
-		"typescript": "^5.3.3"
+		"typescript": "^5.4.2"
 	}
 }
