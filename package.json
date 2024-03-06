@@ -25,6 +25,7 @@
 		".": "./index.ts",
 		"./ctx": "./ctx/index.ts",
 		"./drizzle": "./drizzle/index.ts",
+		"./ld_json": "./ld_json/index.ts",
 		"./logo": "./logo/index.ts",
 		"./response": "./response/index.ts",
 		"./schema": "./schema/index.ts",
@@ -41,6 +42,7 @@
 		"*.json",
 		"ctx",
 		"drizzle",
+		"ld_json",
 		"logo",
 		"response",
 		"schema",
@@ -58,7 +60,8 @@
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"relementjs": "^0.74.4"
+		"relementjs": "^0.74.4",
+		"schema-dts": "^1.1.2"
 	},
 	"peerDependencies": {
 		"typescript": "^5.4.2"
