@@ -1,8 +1,8 @@
 import type { Graph, Thing } from '@btakita/schema-dts'
-import { id_be_, ns_id_be_ } from 'ctx-core/rmemo'
-import { type request_ctx_T, wide_app_ctx_T } from 'rebuildjs/server'
+import { id_be_, ns_id_be_, ns_id_be_memo_pair_ } from 'ctx-core/rmemo'
+import { type request_ctx_T, type wide_app_ctx_T } from 'rebuildjs/server'
 import { type wide_ctx_T } from 'rmemo'
-export function ns_id_be_id_ref_jsonld_pair_<
+export function ns_id_id_ref_be_jsonld_pair_<
 	val_T extends Thing,
 	ns_T extends ''|'app',
 	ctx_T extends (wide_app_ctx_T|request_ctx_T)&wide_ctx_T<ns_T>
@@ -11,14 +11,14 @@ export function ns_id_be_id_ref_jsonld_pair_<
 	id:string,
 	fn:(ctx:ctx_T)=>val_T
 ):[(ctx:ctx_T)=>id_ref_T, (ctx:ctx_T)=>val_T] {
-	const jsonld_id_ref_ = ns_id_be_(ns, id + '_id_ref', (ctx:ctx_T)=>{
+	const [, jsonld_id_ref_] = ns_id_be_memo_pair_(ns, id + '_id_ref', (ctx:ctx_T)=>{
 		return (
 			ns === 'app'
 				? app_jsonld__add(<wide_app_ctx_T>ctx, fn(ctx))
 				: jsonld__add(<request_ctx_T>ctx, fn(ctx))
 		)
 	})
-	const jsonld_ = ns_id_be_<val_T, ns_T, ctx_T>(ns, id, (ctx:ctx_T)=>{
+	const [, jsonld_] = ns_id_be_memo_pair_(ns, id, (ctx:ctx_T)=>{
 		return <val_T>(
 			ns === 'app'
 				? app_id_ref_M_jsonld_(ctx).get(jsonld_id_ref_(ctx))
@@ -34,7 +34,7 @@ export function id_be_id_ref_jsonld_pair_<
 	val_T extends Thing,
 	ctx_T extends request_ctx_T
 >(id:string, fn:(ctx:ctx_T)=>val_T) {
-	return ns_id_be_id_ref_jsonld_pair_<val_T, '', ctx_T>('', id, fn)
+	return ns_id_id_ref_be_jsonld_pair_<val_T, '', ctx_T>('', id, fn)
 }
 export const jsonld_Graph__init_ = id_be_('jsonld_Graph__init', (ctx:request_ctx_T)=>()=>{})
 export const jsonld_Graph_ = id_be_('site__jsonld_Graph', (ctx:request_ctx_T)=>{
