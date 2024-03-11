@@ -13,3 +13,7 @@ export type schema_org_thing_rdfa_T = {
 export type schema_org_props_rdfa_T<T extends Thing> = {
 	property:keyof T
 }
+export const schema_org_Article_rdfa = Object.freeze(<schema_org_thing_rdfa_T>{
+	vocab: schema_org_rdfa_vocab,
+	typeof: 'Article',
+})
