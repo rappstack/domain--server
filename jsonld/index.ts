@@ -86,6 +86,14 @@ export const [
 ).add(ctx=>queueMicrotask(()=>WebPage_id_ref_(ctx)))
 export const [
 	,
+	WebPage__headline_,
+	WebPage__headline__set
+] = id_be_sig_triple_<string|undefined, unknown, request_ctx_T>(
+	'WebPage__headline',
+	()=>undefined
+).add(ctx=>WebPage__name_(ctx))
+export const [
+	,
 	WebPage__description_,
 	WebPage__description__set
 ] = id_be_sig_triple_<string|undefined, unknown, request_ctx_T>(
@@ -101,6 +109,26 @@ export const [
 	()=>'WebPage'
 ).add(ctx=>WebPage__name_(ctx))
 export const [
+	,
+	WebPage__author_,
+	WebPage__author__set
+] = id_be_sig_triple_<id_ref_T|undefined, unknown, request_ctx_T>(
+	'WebPage__author',
+	ctx=>{
+		return nullish__none_(tup(site__website_(ctx)), (
+			site__website
+		)=><id_ref_T>{ '@id': url__join(site__website, '#Person') })
+	}
+).add(ctx=>WebPage__name_(ctx))
+export const [
+	,
+	WebPage__hasPart_,
+	WebPage__hasPart__set
+] = id_be_sig_triple_<id_ref_T[]|undefined, unknown, request_ctx_T>(
+	'WebPage__hasPart',
+	ctx=>undefined
+).add(ctx=>WebPage__name_(ctx))
+export const [
 	[WebPage_id_ref_],
 	WebPage_id_
 ] = [
@@ -114,7 +142,10 @@ export const [
 			description: WebPage__description_(ctx),
 			about: Person_id_ref_(ctx),
 			isPartOf: WebSite_id_ref_(ctx),
-			inLanguage: 'en-us'
+			inLanguage: 'en-us',
+			headline: WebPage__headline_(ctx),
+			author: WebPage__author_(ctx),
+			hasPart: WebPage__hasPart_(ctx),
 		})
 	}),
 	(ctx:request_ctx_T)=><string>WebPage_id_ref_(ctx)['@id']
