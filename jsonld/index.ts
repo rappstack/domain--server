@@ -1,4 +1,3 @@
-import { Person_id_ref_, WebSite_id_ref_ } from '@btakita/domain--server--briantakita/jsonld'
 import type { Graph, Thing, WebPage } from '@btakita/schema-dts'
 import { id_be_, ns_id_be_, ns_id_be_memo_pair_, nullish__none_, tup } from 'ctx-core/rmemo'
 import { url__join } from 'ctx-core/uri'
@@ -122,6 +121,30 @@ export const [
 ).add(ctx=>WebPage__name_(ctx))
 export const [
 	,
+	WebPage__about_,
+	WebPage__about__set
+] = id_be_sig_triple_<id_ref_T|undefined, unknown, request_ctx_T>(
+	'WebPage__about',
+	ctx=>{
+		return nullish__none_(tup(site__website_(ctx)), (
+			site__website
+		)=><id_ref_T>{ '@id': url__join(site__website, '#Person') })
+	}
+).add(ctx=>WebPage__name_(ctx))
+export const [
+	,
+	WebPage__isPartOf_,
+	WebPage__isPartOf__set
+] = id_be_sig_triple_<id_ref_T|undefined, unknown, request_ctx_T>(
+	'WebPage__isPartOf',
+	ctx=>{
+		return nullish__none_(tup(site__website_(ctx)), (
+			site__website
+		)=><id_ref_T>{ '@id': url__join(site__website, '#WebSite') })
+	}
+).add(ctx=>WebPage__name_(ctx))
+export const [
+	,
 	WebPage__hasPart_,
 	WebPage__hasPart__set
 ] = id_be_sig_triple_<id_ref_T[]|undefined, unknown, request_ctx_T>(
@@ -140,8 +163,8 @@ export const [
 			'@id': url__join(site__website, request_url__pathname_(ctx), '#WebPage'),
 			name: WebPage__name_(ctx),
 			description: WebPage__description_(ctx),
-			about: Person_id_ref_(ctx),
-			isPartOf: WebSite_id_ref_(ctx),
+			about: WebPage__about_(ctx),
+			isPartOf: WebPage__isPartOf_(ctx),
 			inLanguage: 'en-us',
 			headline: WebPage__headline_(ctx),
 			author: WebPage__author_(ctx),
