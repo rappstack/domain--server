@@ -1,7 +1,8 @@
 import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { nullish__none_ } from 'ctx-core/function'
 import { type request_ctx_T } from 'rebuildjs/server'
-import { id_be_memo_pair_, id_be_sig_triple_ } from 'rmemo'
+import type { tag_dom_T } from 'relementjs'
+import { id_be_memo_pair_, id_be_sig_triple_, type wide_ctx_T } from 'rmemo'
 export const [
 	,
 	site_,
@@ -92,6 +93,16 @@ export const [
 ] = id_be_memo_pair_(
 	'site__body_class',
 	ctx=>site_(ctx)?.body_class)
+export const [
+	,
+	site__logo_image__new_,
+] = id_be_sig_triple_<logo_image__new_T|undefined>(
+	'site__logo_image__new',
+	()=>undefined)
+export function site__logo_image_(ctx:wide_ctx_T, $p?:{ class?:string }) {
+	return site__logo_image__new_(ctx)?.($p)
+}
+export type logo_image__new_T = ($p?:{ class?:string })=>tag_dom_T
 export type site_T = {
 	website:string
 	author:string
@@ -104,6 +115,7 @@ export type site_T = {
 	google_site_verification?:string
 	gtag_id?:string
 	body_class?:string
+	logo_image__new:logo_image__new_T
 }
 export type font__meta_props_T =
 	&{ rel:'preconnect'|'stylesheet', href:string, crossorigin?:1|0 }
