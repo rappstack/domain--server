@@ -102,6 +102,12 @@ export const [
 export function site__logo_image_(ctx:wide_ctx_T, $p?:{ class?:string }) {
 	return site__logo_image__new_(ctx)?.($p)
 }
+export const [
+	,
+	site__social_a1_,
+] = id_be_memo_pair_(
+	'site__social_a1',
+	ctx=>site_(ctx)?.social_a1)
 export type logo_image__new_T = ($p?:{ class?:string })=>tag_dom_T
 export type site_T = {
 	website:string
@@ -116,6 +122,7 @@ export type site_T = {
 	gtag_id?:string
 	body_class?:string
 	logo_image__new:logo_image__new_T
+	social_a1?:social_T[]
 }
 export type font__meta_props_T =
 	&{ rel:'preconnect'|'stylesheet', href:string, crossorigin?:1|0 }
@@ -137,4 +144,10 @@ export type icon_link_props_T = {
 		|'image/x-icon'
 		|string
 	href:string
+}
+export type social_T = {
+	icon_:($p?:{ class?:string })=>tag_dom_T
+	href:string
+	active:boolean
+	link_title:string
 }

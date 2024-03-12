@@ -10,17 +10,12 @@ export function site_request_ctx__ensure(
 	},
 	{
 		site,
-		social_a1,
 	}:site_request_ctx__ensure_config_T
 ) {
 	const request_ctx = request_ctx__ensure(middleware_ctx, context)
 	site__set(request_ctx, site)
-	if (social_a1) {
-		social_a1__set(request_ctx, social_a1)
-	}
 	return request_ctx
 }
 export type site_request_ctx__ensure_config_T = {
 	site:site_T
-	social_a1?:social_T[]
 }

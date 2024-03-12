@@ -34,7 +34,6 @@
 		"./schema": "./schema/index.ts",
 		"./schema/text_cache": "./schema/text_cache/index.ts",
 		"./site": "./site/index.ts",
-		"./social": "./social/index.ts",
 		"./sqlite": "./sqlite/index.ts",
 		"./text_cache": "./text_cache/index.ts",
 		"./package.json": "./package.json"
@@ -53,7 +52,6 @@
 		"response",
 		"schema",
 		"site",
-		"social",
 		"sqlite",
 		"text_cache"
 	],
