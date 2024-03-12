@@ -1,6 +1,6 @@
+import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { nullish__none_ } from 'ctx-core/function'
 import { type request_ctx_T } from 'rebuildjs/server'
-import { request_url_ } from 'relysjs/server'
 import { id_be_memo_pair_, id_be_sig_triple_ } from 'rmemo'
 export const [
 	,
@@ -56,7 +56,7 @@ export const [
 		return nullish__none_([site_(ctx)?.icon], icon=>
 			<icon_link_props_T>{
 				...icon,
-				href: new URL(icon.href, request_url_(ctx).origin) + ''
+				href: new URL(icon.href, request_url__origin_(ctx)) + ''
 			})
 	})
 export const [
@@ -64,9 +64,9 @@ export const [
 	site__social_image_url_,
 ] = id_be_memo_pair_(
 	'site__social_image_url',
-	ctx=>{
+	(ctx:request_ctx_T)=>{
 		return nullish__none_([site_(ctx)?.social_image_url], (social_image_url)=>
-			new URL(social_image_url) + '')
+			new URL(social_image_url, request_url__origin_(ctx)).href)
 	})
 export const [
 	,
