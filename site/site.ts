@@ -98,7 +98,7 @@ export const [
 	site__logo_image__new_,
 ] = id_be_sig_triple_<logo_image__new_T|undefined>(
 	'site__logo_image__new',
-	()=>undefined)
+	ctx=>site_(ctx)?.logo_image__new)
 export function site__logo_image_(ctx:wide_ctx_T, $p?:{ class?:string }) {
 	return site__logo_image__new_(ctx)?.($p)
 }
