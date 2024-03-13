@@ -22,8 +22,9 @@ export const [
 	'request_url__origin',
 	ctx=>{
 		const request_url = request_url_(ctx)
-		const { hostname } = request_url
+		const { hostname, port } = request_url
 		const protocol = hostname === 'localhost' ? 'http:' : 'https:'
-		return protocol + '//' + hostname
+		const url_port = hostname === 'localhost' && port ? `:${port}` : ''
+		return protocol + '//' + hostname + url_port
 	}
 )
