@@ -1,8 +1,8 @@
-import { request_url__origin_ } from '@rappstack/ui--server/request'
 import { nullish__none_ } from 'ctx-core/function'
 import { type request_ctx_T } from 'rebuildjs/server'
 import type { tag_dom_T } from 'relementjs'
 import { id_be_memo_pair_, id_be_sig_triple_, type wide_ctx_T } from 'rmemo'
+import { request_url__origin_ } from '../request/index.js'
 export const [
 	,
 	site_,
@@ -50,11 +50,11 @@ export const [
 	(ctx:request_ctx_T)=>site_(ctx)?.font__meta_props_a1 ?? [])
 export const [
 	,
-	site__icon_,
+	site__favicon_,
 ] = id_be_memo_pair_(
-	'site__icon',
+	'site__favicon',
 	(ctx:request_ctx_T)=>{
-		return nullish__none_([site_(ctx)?.icon], icon=>
+		return nullish__none_([site_(ctx)?.favicon], icon=>
 			<icon_link_props_T>{
 				...icon,
 				href: new URL(icon.href, request_url__origin_(ctx)) + ''
@@ -115,13 +115,13 @@ export type site_T = {
 	description:string
 	title:string
 	font__meta_props_a1?:font__meta_props_T[]
-	icon?:icon_link_props_T
+	favicon?:icon_link_props_T
 	social_image_url?:string|URL
 	light_and_dark_mode?:boolean
 	google_site_verification?:string
 	gtag_id?:string
 	body_class?:string
-	logo_image__new:logo_image__new_T
+	logo_image__new?:logo_image__new_T
 	social_a1?:social_T[]
 }
 export type font__meta_props_T =
