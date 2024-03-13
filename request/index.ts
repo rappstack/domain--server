@@ -26,5 +26,4 @@ export const [
 		const protocol = hostname === 'localhost' ? 'http:' : 'https:'
 		const url_port = hostname === 'localhost' && port ? `:${port}` : ''
 		return protocol + '//' + hostname + url_port
-	}
-)
+	})
