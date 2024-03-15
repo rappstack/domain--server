@@ -64,7 +64,6 @@
 		"rmemo": "^0.46.15"
 	},
 	"devDependencies": {
-		"@btakita/schema-dts": "^1.1.3-patch",
 		"bun-types": "latest",
 		"relementjs": "^0.74.8",
 		"schema-dts": "^1.1.2"

@@ -1,4 +1,4 @@
-import type { Graph, Thing, WebPage } from '@btakita/schema-dts'
+import type { Graph, Thing, WebPage } from 'schema-dts'
 import { id_be_, ns_id_be_, ns_id_be_memo_pair_, nullish__none_, tup } from 'ctx-core/rmemo'
 import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T, type wide_app_ctx_T } from 'rebuildjs/server'

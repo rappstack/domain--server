@@ -1,4 +1,4 @@
-import type { Thing } from '@btakita/schema-dts'
+import type { Thing } from 'schema-dts'
 import { nullish__none_, tup } from 'ctx-core/rmemo'
 import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T } from 'rebuildjs/server'
