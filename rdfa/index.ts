@@ -3,6 +3,7 @@ import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { id_be_memo_pair_ } from 'rmemo'
 import type { Article, CreativeWork, Thing } from 'schema-dts'
+import { type id_ref_T } from '../jsonld/index.js'
 import { request_url__pathname_ } from '../request/index.js'
 import { site__website_ } from '../site/index.js'
 export const schema_org_rdfa_vocab = 'http://schema.org/'
@@ -31,6 +32,17 @@ export function schema_org_rdfa_<T extends Thing>(_typeof:Thing_type_T<T>) {
 }
 export const schema_org_Article_rdfa = schema_org_rdfa_<Article>('Article')
 export const schema_org_CreativeWork_rdfa = schema_org_rdfa_<CreativeWork>('CreativeWork')
+export function schema_org_rdfa_resource_o_(schema_org_id:id_ref_T|string) {
+	return {
+		resource: typeof schema_org_id === 'string' ? schema_org_id : schema_org_id['@id']
+	}
+}
+/** @see {https://stackoverflow.com/a/46018087/142571} */
+export function schema_org_rdfa_rev_o_<Parent extends Thing>(prop:keyof Parent) {
+	return {
+		rev: prop
+	}
+}
 export const [
 	,
 	Article_id_
