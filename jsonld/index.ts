@@ -81,16 +81,14 @@ export const [
 	WebPage__name__set
 ] = id_be_sig_triple_<string|undefined, unknown, request_ctx_T>(
 	'WebPage__name',
-	()=>undefined
-).add(ctx=>queueMicrotask(()=>WebPage_id_ref_(ctx)))
+	()=>undefined)
 export const [
 	,
 	WebPage__headline_,
 	WebPage__headline__set
 ] = id_be_sig_triple_<string|undefined, unknown, request_ctx_T>(
 	'WebPage__headline',
-	()=>undefined
-).add(ctx=>WebPage__name_(ctx))
+	()=>undefined)
 export const [
 	,
 	WebPage__description_,
@@ -106,7 +104,7 @@ export const [
 ] = id_be_sig_triple_<WebPage['@type'], unknown, request_ctx_T>(
 	'WebPage__type',
 	()=>'WebPage'
-).add(ctx=>WebPage__name_(ctx))
+)
 export const [
 	,
 	WebPage__author_,
@@ -117,8 +115,7 @@ export const [
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
 		)=><id_ref_T>{ '@id': url__join(site__website, '#Person') })
-	}
-).add(ctx=>WebPage__name_(ctx))
+	})
 export const [
 	,
 	WebPage__about_,
@@ -129,8 +126,7 @@ export const [
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
 		)=><id_ref_T>{ '@id': url__join(site__website, '#Person') })
-	}
-).add(ctx=>WebPage__name_(ctx))
+	})
 export const [
 	,
 	WebPage__isPartOf_,
@@ -141,16 +137,14 @@ export const [
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
 		)=><id_ref_T>{ '@id': url__join(site__website, '#WebSite') })
-	}
-).add(ctx=>WebPage__name_(ctx))
+	})
 export const [
 	,
 	WebPage__hasPart_,
 	WebPage__hasPart__set
 ] = id_be_sig_triple_<id_ref_T[]|undefined, unknown, request_ctx_T>(
 	'WebPage__hasPart',
-	ctx=>undefined
-).add(ctx=>WebPage__name_(ctx))
+	()=>undefined)
 export function WebPage__hasPart__push(ctx:request_ctx_T, id_ref:id_ref_T) {
 	WebPage__hasPart__set(ctx, [
 		...WebPage__hasPart_(ctx) ?? [],
