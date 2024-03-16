@@ -32,13 +32,17 @@ export function schema_org_rdfa_<T extends Thing>(_typeof:Thing_type_T<T>) {
 }
 export const schema_org_Article_rdfa = schema_org_rdfa_<Article>('Article')
 export const schema_org_CreativeWork_rdfa = schema_org_rdfa_<CreativeWork>('CreativeWork')
-export function schema_org_rdfa_resource_o_(schema_org_id:id_ref_T|string) {
+export function schema_org_rdfa_resource_<T extends Thing>(
+	_typeof:Thing_type_T<T>,
+	schema_org_id:id_ref_T|string
+) {
 	return {
+		...schema_org_rdfa_<T>(_typeof),
 		resource: typeof schema_org_id === 'string' ? schema_org_id : schema_org_id['@id']
 	}
 }
 /** @see {https://stackoverflow.com/a/46018087/142571} */
-export function schema_org_rdfa_rev_o_<Parent extends Thing>(prop:keyof Parent) {
+export function schema_org_rdfa_rev_<Parent extends Thing>(prop:keyof Parent) {
 	return {
 		rev: prop
 	}
