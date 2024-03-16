@@ -1,8 +1,8 @@
-import type { Thing } from 'schema-dts'
 import { nullish__none_, tup } from 'ctx-core/rmemo'
 import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { id_be_memo_pair_ } from 'rmemo'
+import type { Article, CreativeWork, Thing } from 'schema-dts'
 import { request_url__pathname_ } from '../request/index.js'
 import { site__website_ } from '../site/index.js'
 export const schema_org_rdfa_vocab = 'http://schema.org/'
@@ -19,14 +19,18 @@ export type schema_org_thing_rdfa_T = {
 export type schema_org_props_rdfa_T<T extends Thing> = {
 	property:keyof T
 }
-export const schema_org_Article_rdfa = Object.freeze(<schema_org_thing_rdfa_T>{
-	vocab: schema_org_rdfa_vocab,
-	typeof: 'Article',
-})
-export const schema_org_CreativeWork_rdfa = Object.freeze(<schema_org_thing_rdfa_T>{
-	vocab: schema_org_rdfa_vocab,
-	typeof: 'CreativeWork',
-})
+export type Thing_type_T<T extends Thing> =
+	T extends { ['@type']:string }
+		? T['@type']
+		: never
+export function schema_org_thing_rdfa_<T extends Thing>(_typeof:Thing_type_T<T>) {
+	return <schema_org_thing_rdfa_T>{
+		vocab: schema_org_rdfa_vocab,
+		typeof: _typeof,
+	}
+}
+export const schema_org_Article_rdfa = schema_org_thing_rdfa_<Article>('Article')
+export const schema_org_CreativeWork_rdfa = schema_org_thing_rdfa_<CreativeWork>('CreativeWork')
 export const [
 	,
 	Article_id_
