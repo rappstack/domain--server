@@ -1,9 +1,9 @@
-import type { Graph, Thing, WebPage } from 'schema-dts'
 import { id_be_, ns_id_be_, ns_id_be_memo_pair_, nullish__none_, tup } from 'ctx-core/rmemo'
 import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T, type wide_app_ctx_T } from 'rebuildjs/server'
 import { id_be_sig_triple_ } from 'relementjs'
 import { type wide_ctx_T } from 'rmemo'
+import type { Graph, Thing, WebPage } from 'schema-dts'
 import { request_url__pathname_ } from '../request/index.js'
 import { site__website_ } from '../site/index.js'
 export function ns_id_be_id_ref_be_jsonld_pair_<
@@ -151,6 +151,12 @@ export const [
 	'WebPage__hasPart',
 	ctx=>undefined
 ).add(ctx=>WebPage__name_(ctx))
+export function WebPage__hasPart__push(ctx:request_ctx_T, id_ref:id_ref_T) {
+	WebPage__hasPart__set(ctx, [
+		...WebPage__hasPart_(ctx) ?? [],
+		id_ref
+	])
+}
 export const [
 	[WebPage_id_ref_],
 	WebPage_id_
