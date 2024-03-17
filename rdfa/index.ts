@@ -19,6 +19,8 @@ export type schema_org_thing_rdfa_T = {
 }
 export type schema_org_props_rdfa_T<T extends Thing> = {
 	property:keyof T
+	about?:string
+	rel?:string
 }
 export type Thing_type_T<T extends Thing> =
 	T extends { ['@type']:string }
