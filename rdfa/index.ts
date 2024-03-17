@@ -24,20 +24,27 @@ export type Thing_type_T<T extends Thing> =
 	T extends { ['@type']:string }
 		? T['@type']
 		: never
-export function schema_org_rdfa_<T extends Thing>(_typeof:Thing_type_T<T>) {
-	return <schema_org_thing_rdfa_T>{
-		vocab: schema_org_rdfa_vocab,
-		typeof: _typeof,
+export function schema_org_id_(ctx_OR_prefix:request_ctx_T|string, suffix:string) {
+	return url__join(
+		typeof ctx_OR_prefix === 'string'
+			? ctx_OR_prefix
+			: url__join(site__website_(ctx_OR_prefix)!, request_url__pathname_(ctx_OR_prefix)),
+		'#' + suffix)
+}
+export function schema_org_id_ref_(ctx_OR_prefix:request_ctx_T|string, suffix:string) {
+	return {
+		'@id': schema_org_id_(ctx_OR_prefix, suffix)
 	}
 }
-export const schema_org_Article_rdfa = schema_org_rdfa_<Article>('Article')
-export const schema_org_CreativeWork_rdfa = schema_org_rdfa_<CreativeWork>('CreativeWork')
-export function schema_org_rdfa_resource_<T extends Thing>(
+export function schema_org_rdfa_<T extends Thing>(
 	_typeof:Thing_type_T<T>,
 	schema_org_id:id_ref_T|string
 ) {
 	return {
-		...schema_org_rdfa_<T>(_typeof),
+		...<schema_org_thing_rdfa_T>{
+			vocab: schema_org_rdfa_vocab,
+			typeof: _typeof,
+		},
 		resource: typeof schema_org_id === 'string' ? schema_org_id : schema_org_id['@id']
 	}
 }

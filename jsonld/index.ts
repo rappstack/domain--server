@@ -1,10 +1,9 @@
 import { id_be_, ns_id_be_, ns_id_be_memo_pair_, nullish__none_, tup } from 'ctx-core/rmemo'
-import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T, type wide_app_ctx_T } from 'rebuildjs/server'
 import { id_be_sig_triple_ } from 'relementjs'
 import { type wide_ctx_T } from 'rmemo'
 import type { Graph, Thing, WebPage } from 'schema-dts'
-import { request_url__pathname_ } from '../request/index.js'
+import { schema_org_id_ } from '../rdfa/index.js'
 import { site__website_ } from '../site/index.js'
 export function ns_id_be_id_ref_be_jsonld_pair_<
 	T extends Thing,
@@ -114,7 +113,7 @@ export const [
 	ctx=>{
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
-		)=><id_ref_T>{ '@id': url__join(site__website, '#Person') })
+		)=><id_ref_T>{ '@id': schema_org_id_(site__website, 'Person') })
 	})
 export const [
 	,
@@ -125,7 +124,7 @@ export const [
 	ctx=>{
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
-		)=><id_ref_T>{ '@id': url__join(site__website, '#Person') })
+		)=><id_ref_T>{ '@id': schema_org_id_(site__website, 'Person') })
 	})
 export const [
 	,
@@ -136,7 +135,7 @@ export const [
 	ctx=>{
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
-		)=><id_ref_T>{ '@id': url__join(site__website, '#WebSite') })
+		)=><id_ref_T>{ '@id': schema_org_id_(site__website, 'WebSite') })
 	})
 export const [
 	,
@@ -156,11 +155,9 @@ export const [
 	WebPage_id_
 ] = [
 	id_be_id_ref_jsonld_pair_('WebPage', ctx=>{
-		return nullish__none_(tup(site__website_(ctx)), (
-			site__website
-		)=><WebPage>{
+		return nullish__none_(tup(site__website_(ctx)), ()=><WebPage>{
 			'@type': WebPage__type_(ctx),
-			'@id': url__join(site__website, request_url__pathname_(ctx), '#WebPage'),
+			'@id': schema_org_id_(ctx, 'WebPage'),
 			name: WebPage__name_(ctx),
 			description: WebPage__description_(ctx),
 			about: WebPage__about_(ctx),
