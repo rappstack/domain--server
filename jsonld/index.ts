@@ -128,6 +128,13 @@ export const [
 	})
 export const [
 	,
+	WebPage__mainContentOfPage_,
+	WebPage__mainContentOfPage__set,
+] = id_be_sig_triple_<id_ref_T|undefined, unknown, request_ctx_T>(
+	'WebPage__mainContentOfPage',
+	()=>undefined)
+export const [
+	,
 	WebPage__isPartOf_,
 	WebPage__isPartOf__set
 ] = id_be_sig_triple_<id_ref_T|undefined, unknown, request_ctx_T>(
@@ -165,6 +172,7 @@ export const [
 			inLanguage: 'en-us',
 			headline: WebPage__headline_(ctx),
 			author: WebPage__author_(ctx),
+			mainContentOfPage: WebPage__mainContentOfPage_(ctx),
 			hasPart: WebPage__hasPart_(ctx),
 		})
 	}),
