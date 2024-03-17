@@ -1,10 +1,23 @@
 import { id_be_, ns_id_be_, ns_id_be_memo_pair_, nullish__none_, tup } from 'ctx-core/rmemo'
+import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T, type wide_app_ctx_T } from 'rebuildjs/server'
 import { id_be_sig_triple_ } from 'relementjs'
 import { type wide_ctx_T } from 'rmemo'
 import type { Graph, Thing, WebPage } from 'schema-dts'
-import { schema_org_id_ } from '../rdfa/index.js'
+import { request_url__pathname_ } from '../request/index.js'
 import { site__website_ } from '../site/index.js'
+export function jsonld_id__new(ctx_OR_prefix:request_ctx_T|string, suffix:string) {
+	return url__join(
+		typeof ctx_OR_prefix === 'string'
+			? ctx_OR_prefix
+			: url__join(site__website_(ctx_OR_prefix)!, request_url__pathname_(ctx_OR_prefix)),
+		'#' + suffix)
+}
+export function jsonld_id_ref__new(ctx_OR_prefix:request_ctx_T|string, suffix:string) {
+	return {
+		'@id': jsonld_id__new(ctx_OR_prefix, suffix)
+	}
+}
 export function ns_id_be_id_ref_be_jsonld_pair_<
 	T extends Thing,
 	ns_T extends ''|'app',
@@ -113,7 +126,7 @@ export const [
 	ctx=>{
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
-		)=><id_ref_T>{ '@id': schema_org_id_(site__website, 'Person') })
+		)=><id_ref_T>{ '@id': jsonld_id__new(site__website, 'Person') })
 	})
 export const [
 	,
@@ -124,7 +137,7 @@ export const [
 	ctx=>{
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
-		)=><id_ref_T>{ '@id': schema_org_id_(site__website, 'Person') })
+		)=><id_ref_T>{ '@id': jsonld_id__new(site__website, 'Person') })
 	})
 export const [
 	,
@@ -142,7 +155,7 @@ export const [
 	ctx=>{
 		return nullish__none_(tup(site__website_(ctx)), (
 			site__website
-		)=><id_ref_T>{ '@id': schema_org_id_(site__website, 'WebSite') })
+		)=><id_ref_T>{ '@id': jsonld_id__new(site__website, 'WebSite') })
 	})
 export const [
 	,
@@ -164,7 +177,7 @@ export const [
 	id_be_id_ref_jsonld_pair_('WebPage', ctx=>{
 		return nullish__none_(tup(site__website_(ctx)), ()=><WebPage>{
 			'@type': WebPage__type_(ctx),
-			'@id': schema_org_id_(ctx, 'WebPage'),
+			'@id': jsonld_id__new(ctx, 'WebPage'),
 			name: WebPage__name_(ctx),
 			description: WebPage__description_(ctx),
 			about: WebPage__about_(ctx),

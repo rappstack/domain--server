@@ -2,7 +2,7 @@ import { nullish__none_, tup } from 'ctx-core/rmemo'
 import { url__join } from 'ctx-core/uri'
 import { type request_ctx_T } from 'rebuildjs/server'
 import { id_be_memo_pair_ } from 'rmemo'
-import type { Article, CreativeWork, Thing } from 'schema-dts'
+import type { Thing } from 'schema-dts'
 import { type id_ref_T } from '../jsonld/index.js'
 import { request_url__pathname_ } from '../request/index.js'
 import { site__website_ } from '../site/index.js'
@@ -24,18 +24,6 @@ export type Thing_type_T<T extends Thing> =
 	T extends { ['@type']:string }
 		? T['@type']
 		: never
-export function schema_org_id_(ctx_OR_prefix:request_ctx_T|string, suffix:string) {
-	return url__join(
-		typeof ctx_OR_prefix === 'string'
-			? ctx_OR_prefix
-			: url__join(site__website_(ctx_OR_prefix)!, request_url__pathname_(ctx_OR_prefix)),
-		'#' + suffix)
-}
-export function schema_org_id_ref_(ctx_OR_prefix:request_ctx_T|string, suffix:string) {
-	return {
-		'@id': schema_org_id_(ctx_OR_prefix, suffix)
-	}
-}
 export function schema_org_rdfa_<T extends Thing>(
 	_typeof:Thing_type_T<T>,
 	schema_org_id:id_ref_T|string
