@@ -115,8 +115,7 @@ export const [
 	WebPage__type__set
 ] = id_be_sig_triple_<WebPage['@type'], unknown, request_ctx_T>(
 	'WebPage__type',
-	()=>'WebPage'
-)
+	()=>'WebPage')
 export const [
 	,
 	WebPage__author_,
