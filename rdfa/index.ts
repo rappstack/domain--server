@@ -48,6 +48,11 @@ export function schema_org_rdfa_<T extends Thing>(
 		resource: typeof schema_org_id === 'string' ? schema_org_id : schema_org_id['@id']
 	}
 }
+export function schema_org_rdfa_property_<Parent extends Thing>(prop:keyof Parent) {
+	return {
+		property: prop
+	}
+}
 /** @see {https://stackoverflow.com/a/46018087/142571} */
 export function schema_org_rdfa_rev_<Parent extends Thing>(prop:keyof Parent) {
 	return {
