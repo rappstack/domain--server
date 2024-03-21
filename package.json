@@ -61,8 +61,8 @@
 		"ctx-core": "^6.6.2",
 		"drizzle-kit": "^0.20.14",
 		"drizzle-orm": "^0.30.4",
-		"rebuildjs": "^0.66.2",
-		"relysjs": "^1.17.2",
+		"rebuildjs": "^0.66.3",
+		"relysjs": "^1.17.3",
 		"rmemo": "^0.47.2"
 	},
 	"devDependencies": {
@@ -71,6 +71,6 @@
 		"schema-dts": "^1.1.2"
 	},
 	"peerDependencies": {
-		"typescript": "^5.4.2"
+		"typescript": "^5.4.3"
 	}
 }
