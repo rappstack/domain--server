@@ -67,7 +67,7 @@
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"relementjs": "^0.75.2",
+		"relementjs": "^0.75.5",
 		"schema-dts": "^1.1.2"
 	},
 	"peerDependencies": {
