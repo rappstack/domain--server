@@ -62,7 +62,7 @@
 		"drizzle-kit": "^0.20.14",
 		"drizzle-orm": "^0.30.4",
 		"rebuildjs": "^0.66.3",
-		"relysjs": "^1.17.6",
+		"relysjs": "^1.17.7",
 		"rmemo": "^0.47.2"
 	},
 	"devDependencies": {
