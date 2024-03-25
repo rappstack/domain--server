@@ -58,16 +58,16 @@
 		"text_cache"
 	],
 	"dependencies": {
-		"ctx-core": "^6.6.2",
+		"ctx-core": "^6.7.0",
 		"drizzle-kit": "^0.20.14",
 		"drizzle-orm": "^0.30.4",
-		"rebuildjs": "^0.66.3",
-		"relysjs": "^1.17.7",
-		"rmemo": "^0.47.2"
+		"rebuildjs": "^0.67.1",
+		"relysjs": "^1.18.0",
+		"rmemo": "^0.48.0"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"relementjs": "^0.75.5",
+		"relementjs": "^0.76.0",
 		"schema-dts": "^1.1.2"
 	},
 	"peerDependencies": {
