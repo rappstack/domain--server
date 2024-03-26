@@ -6,13 +6,19 @@ export const [
 	,
 	request_url__href_,
 ] = id_be_memo_pair_('request_url__href', (ctx:request_ctx_T)=>{
-	return request_url_(ctx)?.href
+	return new URL(request_url__pathname_(ctx) + request_url__search_(ctx), request_url__origin_(ctx)).href
 })
 export const [
 	,
 	request_url__pathname_,
 ] = id_be_memo_pair_('request_url__pathname', (ctx:request_ctx_T)=>{
 	return request_url_(ctx)?.pathname
+})
+export const [
+	,
+	request_url__search_,
+] = id_be_memo_pair_('request_url__search', (ctx:request_ctx_T)=>{
+	return request_url_(ctx)?.search
 })
 export const [
 	,
