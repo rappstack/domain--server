@@ -29,6 +29,8 @@
 		"./jsonld": "./jsonld/index.ts",
 		"./logo": "./logo/index.ts",
 		"./microdata": "./microdata/index.ts",
+		"./meta": "./meta/index.ts",
+		"./og": "./og/index.ts",
 		"./rdfa": "./rdfa/index.ts",
 		"./request": "./request/index.ts",
 		"./response": "./response/index.ts",
@@ -37,6 +39,7 @@
 		"./site": "./site/index.ts",
 		"./sqlite": "./sqlite/index.ts",
 		"./text_cache": "./text_cache/index.ts",
+		"./twitter": "./twitter/index.ts",
 		"./package.json": "./package.json"
 	},
 	"files": [
@@ -49,13 +52,16 @@
 		"jsonld",
 		"logo",
 		"microdata",
+		"meta",
+		"og",
 		"rdfa",
 		"request",
 		"response",
 		"schema",
 		"site",
 		"sqlite",
-		"text_cache"
+		"text_cache",
+		"twitter"
 	],
 	"dependencies": {
 		"ctx-core": "^6.7.0",
@@ -67,7 +73,7 @@
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"relementjs": "^0.76.0",
+		"relementjs": "^0.77.0",
 		"schema-dts": "^1.1.2"
 	},
 	"peerDependencies": {
