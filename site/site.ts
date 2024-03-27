@@ -32,6 +32,12 @@ export const [
 	ctx=>site_(ctx)?.author)
 export const [
 	,
+	site__author_img_url_,
+] = id_be_memo_pair_(
+	'site__author_img_url',
+	ctx=>site_(ctx)?.author_img_url)
+export const [
+	,
 	site__title_,
 ] = id_be_memo_pair_(
 	'site__title',
@@ -112,6 +118,7 @@ export type logo_image__new_T = ($p?:{ class?:string })=>tag_dom_T
 export type site_T = {
 	website:string
 	author:string
+	author_img_url?:string
 	description:string
 	title:string
 	font__meta_props_a1?:font__meta_props_T[]
