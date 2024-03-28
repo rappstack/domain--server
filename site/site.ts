@@ -44,6 +44,12 @@ export const [
 	ctx=>site_(ctx)?.title)
 export const [
 	,
+	site__phone_,
+] = id_be_memo_pair_(
+	'site__phone',
+	ctx=>site_(ctx)?.phone)
+export const [
+	,
 	site__description_,
 ] = id_be_memo_pair_(
 	'site__description',
@@ -121,6 +127,7 @@ export type site_T = {
 	author_img_url:string
 	description:string
 	title:string
+	phone?:string
 	font__meta_props_a1?:font__meta_props_T[]
 	favicon?:icon_link_props_T
 	social_image_url?:string|URL
