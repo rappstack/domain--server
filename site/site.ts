@@ -89,6 +89,18 @@ export const [
 	ctx=>site_(ctx)?.light_and_dark_mode)
 export const [
 	,
+	site__light_theme_color_fill_,
+] = id_be_memo_pair_(
+	'site__light_theme_color_fill',
+	ctx=>site_(ctx)?.light_theme_color_fill)
+export const [
+	,
+	site__dark_theme_color_fill_,
+] = id_be_memo_pair_(
+	'site__dark_theme_color_fill',
+	ctx=>site_(ctx)?.dark_theme_color_fill)
+export const [
+	,
 	site__google_site_verification_
 ] = id_be_memo_pair_(
 	'site__google_site_verification',
@@ -132,6 +144,8 @@ export type site_T = {
 	favicon?:icon_link_props_T
 	social_image_url?:string|URL
 	light_and_dark_mode?:boolean
+	light_theme_color_fill?:string
+	dark_theme_color_fill?:string
 	google_site_verification?:string
 	gtag_id?:string
 	body_class?:string
