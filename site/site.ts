@@ -118,7 +118,7 @@ export type logo_image__new_T = ($p?:{ class?:string })=>tag_dom_T
 export type site_T = {
 	website:string
 	author:string
-	author_img_url?:string
+	author_img_url:string
 	description:string
 	title:string
 	font__meta_props_a1?:font__meta_props_T[]
