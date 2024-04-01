@@ -107,8 +107,8 @@ export const [
 	WebPage__description__set
 ] = id_be_sig_triple_<string|undefined, unknown, request_ctx_T>(
 	'WebPage__description',
-	()=>undefined
-).add(ctx=>WebPage__name_(ctx))
+	()=>undefined,
+	[ctx=>WebPage__name_(ctx)])
 export const [
 	,
 	WebPage__type_,
