@@ -18,7 +18,7 @@ export function jsonld_id_ref__new(ctx_OR_prefix:request_ctx_T|string, suffix:st
 		'@id': jsonld_id__new(ctx_OR_prefix, suffix)
 	}
 }
-export function ns_id_be_id_ref_be_jsonld_pair_<
+export function ns_id_be_id_ref_id_jsonld_pair_<
 	T extends Thing,
 	ns_T extends ''|'app',
 	ctx_T extends (wide_app_ctx_T|request_ctx_T)&wide_ctx_T<ns_T>
@@ -50,7 +50,7 @@ export function id_be_id_ref_jsonld_pair_<
 	val_T extends Thing,
 	ctx_T extends request_ctx_T
 >(id:string, fn:(ctx:ctx_T)=>val_T) {
-	return ns_id_be_id_ref_be_jsonld_pair_<val_T, '', ctx_T>('', id, fn)
+	return ns_id_be_id_ref_id_jsonld_pair_<val_T, '', ctx_T>('', id, fn)
 }
 export const jsonld_Graph__init_ = id_be_('jsonld_Graph__init', (ctx:request_ctx_T)=>()=>{
 })

@@ -1,7 +1,8 @@
 import { nullish__none_ } from 'ctx-core/function'
 import { type request_ctx_T } from 'rebuildjs/server'
-import type { tag_dom_T } from 'relementjs'
+import { type tag_dom_T } from 'relementjs'
 import { id_be_memo_pair_, id_be_sig_triple_, type wide_ctx_T } from 'rmemo'
+import type { Patient, Person } from 'schema-dts'
 import { request_url__origin_ } from '../request/index.js'
 export const [
 	,
@@ -26,16 +27,10 @@ export const [
 			site__website=>new URL(site__website)))
 export const [
 	,
-	site__author_,
+	site__author_a1_,
 ] = id_be_memo_pair_(
-	'site__author',
-	ctx=>site_(ctx)?.author)
-export const [
-	,
-	site__author_img_url_,
-] = id_be_memo_pair_(
-	'site__author_img_url',
-	ctx=>site_(ctx)?.author_img_url)
+	'site__author_a1',
+	ctx=>site_(ctx)?.author_a1)
 export const [
 	,
 	site__title_,
@@ -135,12 +130,7 @@ export const [
 export type logo_image__new_T = ($p?:{ class?:string })=>tag_dom_T
 export type site_T = {
 	website:string
-	author:string
-	author_url:string
-	author_img_url:string
-	editor?:string
-	editor_url?:string
-	editor_img_url?:string
+	author_a1:[author_T, ...author_T[]]
 	description:string
 	title:string
 	phone?:string
@@ -155,6 +145,12 @@ export type site_T = {
 	body_class?:string
 	logo_image__new?:logo_image__new_T
 	social_a1?:social_T[]
+}
+export type author_T = Exclude<Exclude<Person, string>, Patient>&{
+	name:string
+	url?:string
+	image?:string
+	a_target_blank?:boolean
 }
 export type font__meta_props_T =
 	&{ rel:'preconnect'|'stylesheet', href:string, crossorigin?:1|0 }
