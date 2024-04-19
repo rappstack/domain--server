@@ -65,10 +65,10 @@
 	],
 	"dependencies": {
 		"ctx-core": "^7.1.5",
-		"drizzle-kit": "^0.20.14",
+		"drizzle-kit": "^0.20.15",
 		"drizzle-orm": "^0.30.8",
 		"rebuildjs": "^0.69.8",
-		"relysjs": "^1.20.12",
+		"relysjs": "^1.20.13",
 		"rmemo": "^0.50.6"
 	},
 	"devDependencies": {
