@@ -64,16 +64,16 @@
 		"twitter"
 	],
 	"dependencies": {
-		"ctx-core": "^7.2.3",
-		"drizzle-kit": "^0.20.17",
+		"ctx-core": "^7.2.4",
+		"drizzle-kit": "^0.20.18",
 		"drizzle-orm": "^0.30.10",
-		"rebuildjs": "^0.70.7",
-		"relysjs": "^1.21.20",
-		"rmemo": "^0.51.3"
+		"rebuildjs": "^0.70.8",
+		"relysjs": "^1.21.21",
+		"rmemo": "^0.51.4"
 	},
 	"devDependencies": {
 		"bun-types": "latest",
-		"relementjs": "^0.80.3",
+		"relementjs": "^0.80.4",
 		"schema-dts": "^1.1.2"
 	},
 	"peerDependencies": {
