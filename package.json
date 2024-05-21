@@ -67,8 +67,8 @@
 		"ctx-core": "^7.2.10",
 		"drizzle-kit": "^0.21.2",
 		"drizzle-orm": "^0.30.10",
-		"rebuildjs": "^0.70.16",
-		"relysjs": "^1.21.30",
+		"rebuildjs": "^0.70.17",
+		"relysjs": "^1.21.31",
 		"rmemo": "^0.51.10"
 	},
 	"devDependencies": {
