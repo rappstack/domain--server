@@ -78,22 +78,27 @@ export const [
 	})
 export const [
 	,
-	site__light_and_dark_mode_,
+	site__color_scheme_vars_,
 ] = id_be_memo_pair_(
-	'site__light_and_dark_mode',
-	ctx=>site_(ctx)?.light_and_dark_mode)
-export const [
-	,
-	site__light_theme_color_fill_,
-] = id_be_memo_pair_(
-	'site__light_theme_color_fill',
-	ctx=>site_(ctx)?.light_theme_color_fill)
-export const [
-	,
-	site__dark_theme_color_fill_,
-] = id_be_memo_pair_(
-	'site__dark_theme_color_fill',
-	ctx=>site_(ctx)?.dark_theme_color_fill)
+	'site__color_scheme_vars',
+	ctx=>site_(ctx)?.color_scheme_vars)
+export function site__color_scheme_vars__css_(ctx:wide_ctx_T) {
+	return nullish__none_([site__color_scheme_vars_(ctx)], site__color_scheme_vars=>{
+		let css = ''
+		css += ':root{'
+		color_scheme_vars__css_(site__color_scheme_vars.light)
+		css += '}'
+		css += '@media(prefers-color-scheme:dark){:root{'
+		color_scheme_vars__css_(site__color_scheme_vars.dark)
+		css+= '}}'
+		return css
+		function color_scheme_vars__css_(color_scheme_vars:Record<string, string>) {
+			for (let key in color_scheme_vars) {
+				css += key + ':' + color_scheme_vars[key] + ';'
+			}
+		}
+	})
+}
 export const [
 	,
 	site__google_site_verification_
@@ -137,9 +142,10 @@ export type site_T = {
 	font__meta_props_a1?:font__meta_props_T[]
 	favicon?:icon_link_props_T
 	social_image_url?:string|URL
-	light_and_dark_mode?:boolean
-	light_theme_color_fill?:string
-	dark_theme_color_fill?:string
+	color_scheme_vars?:{
+		light:Record<string, string>
+		dark:Record<string, string>
+	}
 	google_site_verification?:string
 	gtag_id?:string
 	body_class?:string
