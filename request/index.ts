@@ -12,7 +12,7 @@ export const [
 	,
 	request_url__pathname_,
 ] = id_be_memo_pair_('request_url__pathname', (ctx:request_ctx_T)=>{
-	return request_url_(ctx)?.pathname
+	return request_url_(ctx)?.pathname.replace(/\/$/, '')
 })
 export const [
 	,
