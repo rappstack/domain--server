@@ -69,7 +69,7 @@
 		"drizzle-orm": "^0.45.1",
 		"rebuildjs": "^0.70.43",
 		"hono": "^4.0.0",
-		"rhonojs": "*",
+		"rhonojs": "^0.1.1",
 		"rmemo": "^0.51.32"
 	},
 	"devDependencies": {

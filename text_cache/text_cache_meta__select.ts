@@ -1,5 +1,5 @@
 import { eq } from 'drizzle-orm'
-import { type wide_app_ctx_T } from 'rebuildjs/server'
+import { type wide_app_ctx_T } from 'rhonojs/server'
 import { drizzle_db_ } from '../drizzle/index.js'
 import { text_cache_tbl } from '../schema/index.js'
 export function text_cache_meta__select(ctx:wide_app_ctx_T, text_cache_id:string) {
